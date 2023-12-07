@@ -2,11 +2,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
 import java.io.IOException;
-
 // This is my take on the project, I had a diffcult time on this and tried doing it, I  wasn't too successful. 
 //I am submitting what I tried but kept getting errors
 // Didn't get enough time to finish this up
-
 public class IRoadTrip {
   // Data structures to store information about countries, borders, and distances
     private HashMap<String, Map<String, Integer>> bordersDatafile;
@@ -111,20 +109,18 @@ public class IRoadTrip {
     }
     public int getDistance(String country1, String country2) {
         // Check if both countries exist in the data
-        if (!bordersDatafile.containsKey(country1) || !bordersDatafile.containsKey(country2)) {
+         if (!bordersDatafile.containsKey(country1) || !bordersDatafile.containsKey(country2)) {
             System.out.println("One or both countries are not being able to be found.");
-            
         }
 
         // Check if the countries share a land border
         if (!bordersDatafile.get(country1).containsKey(country2)) {
             System.out.println("The two don't share a land border");
-            
         }
 
         // Get the distance between capitals of country1 and country2
         String key = country1 + "-" + country2;
-        if (!capDistdatafile.containsKey(key)) {
+             if (!capDistdatafile.containsKey(key)) {
             System.out.println("The data is not being able to be processed");
             }
 
@@ -138,7 +134,7 @@ public class IRoadTrip {
             return Collections.emptyList();
         }
     
-        // trying to use dfs here 
+        
         Set<String> visited = new HashSet<>();
         List<String> path = new ArrayList<>();
         dfs(country1, country2, visited, path);
@@ -217,8 +213,8 @@ public class IRoadTrip {
             scanner.close();
         }
     public static void main(String[] args) {
-        IRoadTrip roadTrip = new IRoadTrip(args);
-        roadTrip.acceptUserInput();
+        IRoadTrip a3 = new IRoadTrip(args);
+        a3.acceptUserInput();
         
     }
 
