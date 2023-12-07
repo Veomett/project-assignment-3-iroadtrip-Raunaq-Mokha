@@ -152,7 +152,7 @@ public class IRoadTrip {
         visited.add(currentCountry);
         path.add(currentCountry);
     
-        // If the current country is the target country, we found a path
+        
         if (currentCountry.equals(targetCountry)) {
             return true;
         }
