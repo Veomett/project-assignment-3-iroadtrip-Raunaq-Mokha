@@ -113,21 +113,20 @@ public class IRoadTrip {
         // Check if both countries exist in the data
         if (!bordersDatafile.containsKey(country1) || !bordersDatafile.containsKey(country2)) {
             System.out.println("One or both countries are not being able to be found.");
-            return -1;
+            
         }
 
         // Check if the countries share a land border
         if (!bordersDatafile.get(country1).containsKey(country2)) {
             System.out.println("The two don't share a land border");
-            return -1;
+            
         }
 
         // Get the distance between capitals of country1 and country2
         String key = country1 + "-" + country2;
         if (!capDistdatafile.containsKey(key)) {
             System.out.println("The data is not being able to be processed");
-            return -1;
-        }
+            }
 
         return capDistdatafile.get(key);
     }
